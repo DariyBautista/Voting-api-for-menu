@@ -231,6 +231,7 @@ To ensure everything works as expected, you can run the system's tests:
 whether he is a worker or a restaurant representative and, depending on the role, grant access to certain endpoints.
 - Implement role-based permissions for managing restaurants and menus.
 - Add pagination for the restaurant list and menu list endpoints.
+- The mobile app always sends the build version in headers. 
 
 
 ## License
