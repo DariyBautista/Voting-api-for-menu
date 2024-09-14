@@ -13,31 +13,6 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils.decorators import method_decorator
 # from utils.version_decorators import check_version
 
-class TodayMenuView(generics.ListAPIView):
-    """
-    Provides a list of menus for the current day.
-
-    Attributes:
-        serializer_class (MenuSerializer): The serializer for the Menu model.
-
-    Methods:
-        get_queryset(): Returns the queryset of menus for the current day.
-    """
-
-    serializer_class = MenuSerializer
-
-    # @method_decorator(check_version('1.0'))
-    def get_queryset(self):
-        """
-        Returns the queryset of menus for the current day.
-
-        Returns:
-            QuerySet: A queryset of Menu objects for today.
-        """
-        today = now().date()
-        return Menu.objects.filter(date=today)
-
-
 class VoteCreateView(generics.CreateAPIView):
     """
     Allows authenticated users to create a vote.
