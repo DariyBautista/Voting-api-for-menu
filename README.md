@@ -194,18 +194,13 @@ Once the server is running, you can access the following endpoints to interact w
 
 ### 4. **Voting Endpoints**
    These endpoints allow users to vote for a particular restaurant based on their daily menu and view the voting results.
-
-  - **Today's Menu**  
-     Endpoint: `/voting/menu/today/`  
-     Method: `GET`  
-     Description: Retrieves all menus available for the current day.
     
-  - **Today's Menu**  
+  - **Vote**  
      Endpoint: `/voting/vote/`  
      Method: `POST`  
      Description: There is a vote for the restaurant
     
-  - **Today's Menu**  
+  - **Vote results**  
      Endpoint: `/voting/results/`  
      Method: `GET`  
      Description: Gets the menu with the most votes for the current day.
