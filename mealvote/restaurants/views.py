@@ -6,7 +6,7 @@ from .serializers import RestaurantSerializer, MenuSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from django.utils import timezone
 from rest_framework.exceptions import ValidationError
-# from utils.version_decorators import check_version
+
 
 class RestaurantCreateView(generics.CreateAPIView):
     """
@@ -23,21 +23,21 @@ class RestaurantCreateView(generics.CreateAPIView):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     permission_classes = [AllowAny]  # Change to a custom permission in the future
+    
+    def post(self, request, *args, **kwargs):
+        """
+        Handles POST requests to create a new restaurant.
 
-    # @check_version('1.0')
-    # def post(self, request, *args, **kwargs):
-    #     """
-    #     Handles POST requests to create a new restaurant.
+        Args:
+            request (Request): The HTTP request object.
+            *args: Additional positional arguments.
+            **kwargs: Additional keyword arguments.
 
-    #     Args:
-    #         request (Request): The HTTP request object.
-    #         *args: Additional positional arguments.
-    #         **kwargs: Additional keyword arguments.
+        Returns:
+            Response: The response containing the created restaurant data.
+        """
+        return super().post(request, *args, **kwargs)
 
-    #     Returns:
-    #         Response: The response containing the created restaurant data.
-    #     """
-    #     return super().post(request, *args, **kwargs)
 
 class RestaurantViewSet(viewsets.ModelViewSet):
     """
@@ -54,10 +54,6 @@ class RestaurantViewSet(viewsets.ModelViewSet):
     queryset = Restaurant.objects.all()
     serializer_class = RestaurantSerializer
     permission_classes = [IsAuthenticated]
-
-    # @check_version('1.0')
-    # def create(self, request, *args, **kwargs):
-    #     return super().create(request, *args, **kwargs)
 
 class MenuCreateView(generics.CreateAPIView):
     """

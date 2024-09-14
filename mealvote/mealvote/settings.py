@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'users.middleware.JWTAuthMiddleware',
-    # 'utils.middleware.version_middleware.VersionMiddleware'
+    # 'utils.version_middleware.VersionMiddleware'
 ]
 
 ROOT_URLCONF = 'mealvote.urls'

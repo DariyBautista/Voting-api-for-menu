@@ -1,5 +1,12 @@
 # from django.http import JsonResponse
 
+# from django.utils.deprecation import MiddlewareMixin
+
+# class VersioningMiddleware(MiddlewareMixin):
+#     def process_request(self, request):
+
+#         request.app_version = request.headers.get('X-App-Version', '1.0')
+
 # class VersionMiddleware:
 #     """
 #     Middleware to add API version information from request headers to the request object.

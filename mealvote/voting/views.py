@@ -10,6 +10,8 @@ from .serializers import VoteSerializer
 from restaurants.models import Menu, Restaurant
 from restaurants.serializers import MenuSerializer, RestaurantSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
+from django.utils.decorators import method_decorator
+# from utils.version_decorators import check_version
 
 class TodayMenuView(generics.ListAPIView):
     """
@@ -24,6 +26,7 @@ class TodayMenuView(generics.ListAPIView):
 
     serializer_class = MenuSerializer
 
+    # @method_decorator(check_version('1.0'))
     def get_queryset(self):
         """
         Returns the queryset of menus for the current day.
@@ -52,6 +55,7 @@ class VoteCreateView(generics.CreateAPIView):
     serializer_class = VoteSerializer
     permission_classes = [IsAuthenticated]
 
+    # @method_decorator(check_version('1.0'))
     def perform_create(self, serializer):
         """
         Saves the vote if the user hasn't voted today. Raises an error if the user has already voted.
@@ -86,6 +90,7 @@ class TodayMenuResultsView(generics.ListAPIView):
     serializer_class = RestaurantSerializer
     permission_classes = [IsAuthenticated]
 
+    # @method_decorator(check_version('1.0'))
     def get_queryset(self):
         """
         Returns the queryset of the restaurant with the highest number of votes for today.
