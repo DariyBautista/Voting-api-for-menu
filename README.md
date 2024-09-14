@@ -17,7 +17,7 @@ update the app to the latest version and the backend has to support both version
 - Getting current day menu
 - Getting results for the current day
 
-  **REQUIREMENTS:**
+**REQUIREMENTS:**
 
 - Only Back End (no needs to add UI);
 - REST architecture;
