@@ -1,6 +1,6 @@
 
 from django.urls import path
-from .views import TodayMenuView, VoteCreateView, TodayMenuResultsView
+from .views import VoteCreateView, TodayMenuResultsView
 
 urlpatterns = [
 
